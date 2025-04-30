@@ -1,0 +1,13 @@
+{
+  "name": "restfull-api-with-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix api\" \"npm run start --prefix frontend\"",
+    "install:all": "npm install && npm run install:api && npm run install:frontend",
+    "install:api": "npm install --prefix api",
+    "install:frontend": "npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

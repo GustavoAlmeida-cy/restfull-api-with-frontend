@@ -1,0 +1,36 @@
+# dependências
+/node_modules
+/api/node_modules
+/frontend/node_modules
+
+# logs de ferramentas
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# arquivos de build
+/build
+/api/build
+/frontend/build
+
+# arquivos de configuração locais
+/.pnp
+.pnp.js
+
+# arquivos temporários do sistema
+.DS_Store
+
+# variáveis de ambiente locais
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# cobertura de testes
+/coverage
+
+# # pacotes do yarn
+# yarn.lock
+
+# # pacotes do npm
+# package-lock.json

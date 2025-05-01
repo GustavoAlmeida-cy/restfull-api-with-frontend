@@ -13,19 +13,39 @@ O projeto está dividido em duas partes principais:
 A estrutura do projeto é a seguinte:
 
 ```
-📁restfull-api-with-frontend
-├── 📁api                    # Backend (API) - Node.js com Express e MySQL
-│   ├── 📁controllers         # Controladores da API
-│   ├── 📁routes              # Rotas da API
-│   ├── db.js                 # Conexão com o banco de dados MySQL
-│   ├── index.js              # Arquivo principal do backend
-│   ├── package.json          # Dependências e scripts do backend
-├── 📁frontend                # Frontend - React.js
-│   ├── 📁components          # Componentes React
-│   ├── 📁styles              # Arquivos de estilo global
-│   ├── index.js              # Arquivo principal do frontend
-│   ├── package.json          # Dependências e scripts do frontend
-├── package.json              # Scripts para rodar o frontend e o backend
+📁 restfull-api-with-frontend
+├── .gitignore
+├── 📁 api
+│   ├── 📁 controllers
+│   │   └── user.js
+│   ├── db.js
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── 📁 routes
+│   │   └── users.js
+│   └── yarn.lock
+├── db-mock.sql
+├── 📁 frontend
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── 📁 public
+│   │   ├── 📁 image
+│   │   │   └── universo.jpg
+│   │   └── index.html
+│   ├── 📁 src
+│   │   ├── App.js
+│   │   ├── 📁 components
+│   │   │   ├── Form.js
+│   │   │   └── Grid.js
+│   │   ├── index.js
+│   │   └── 📁 styles
+│   │       └── global.js
+│   └── yarn.lock
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ## Tecnologias Utilizadas
@@ -34,7 +54,7 @@ A estrutura do projeto é a seguinte:
   - Node.js
   - Express
   - MySQL
-  - Swagger (para documentação da API)
+  - Swagger (para documentação da API) | Link gerado: [http://localhost:8800/api-docs](http://localhost:8800/api-docs)
   - Nodemon (para recarregamento automático no desenvolvimento)
 
 - **Frontend:**
@@ -42,6 +62,14 @@ A estrutura do projeto é a seguinte:
   - Axios (para requisições HTTP)
   - React Router (para navegação)
   - Styled-components (para estilização)
+  
+## Banco de Dados Mock
+
+Este projeto inclui um script SQL (db-mock.sql) localizado na raiz do projeto para criação de um banco de dados MySQL fictício com dados de exemplo. Ele cria:
+
+- Um banco de dados chamado `empresa`
+- Uma tabela chamada `funcionarios`
+- Três registros de exemplo com diferentes cargos e salários  
 
 ## Pré-requisitos
 

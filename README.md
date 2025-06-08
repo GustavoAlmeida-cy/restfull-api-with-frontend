@@ -1,171 +1,97 @@
 
-# Restful API with Frontend
+# 🚀 Restful API com Frontend
 
-Este projeto é uma aplicação full stack, composta por uma API em Node.js com MySQL e um frontend em React. Ele permite realizar operações CRUD (Create, Read, Update, Delete) para gerenciar informações de funcionários, como nome, cargo e salário.
+Uma aplicação **Full Stack** para gerenciar funcionários com operações CRUD — nome, cargo e salário — via uma API RESTful e um frontend intuitivo.
 
-## Estrutura do Projeto
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Styled Components](https://img.shields.io/badge/Styled--Components-db7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-O projeto está dividido em duas partes principais:
+---
 
-- **Backend (API)**: Responsável pela lógica do servidor, autenticação, e interação com o banco de dados.
-- **Frontend**: A interface de usuário para interagir com a API.
-
-A estrutura do projeto é a seguinte:
+## 🧱 Estrutura
 
 ```
-📁 restfull-api-with-frontend
-├── .gitignore
-├── 📁 api
-│   ├── 📁 controllers
-│   │   └── user.js
-│   ├── db.js
-│   ├── index.js
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── 📁 routes
-│   │   └── users.js
-│   └── yarn.lock
-├── db-mock.sql
-├── 📁 frontend
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── 📁 public
-│   │   ├── 📁 image
-│   │   │   └── universo.jpg
-│   │   └── index.html
-│   ├── 📁 src
-│   │   ├── App.js
-│   │   ├── 📁 components
-│   │   │   ├── Form.js
-│   │   │   └── Grid.js
-│   │   ├── index.js
-│   │   └── 📁 styles
-│   │       └── global.js
-│   └── yarn.lock
-├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.md
+📦 Restfull-api-with-frontend
+├── 📁 api          # Backend (Node.js + MySQL)
+├── 📁 frontend     # Frontend (React)
+├── 📁 data         # Script com dados de exemplo
 ```
 
-## Tecnologias Utilizadas
+---
 
-- **Backend:**
-  - Node.js
-  - Express
-  - MySQL
-  - Swagger (para documentação da API) | Link gerado: [http://localhost:8800/api-docs](http://localhost:8800/api-docs)
-  - Nodemon (para recarregamento automático no desenvolvimento)
+## 🔧 Tecnologias
 
-- **Frontend:**
-  - React
-  - Axios (para requisições HTTP)
-  - React Router (para navegação)
-  - Styled-components (para estilização)
+### 🔙 Backend
+- Node.js + Express
+- MySQL
+- Swagger
+- Nodemon
+
+### 🔜 Frontend
+- React
+- Axios
+- React Router
+- styled-components
+
+---
+
+## 🗃 Banco de Dados
+
+Inclui script `db-mock.sql` para criar:
+
+- DB `empresa`
+- Tabela `funcionarios`
+- 3 registros de exemplo
   
-## Banco de Dados Mock
+---
 
-Este projeto inclui um script SQL (db-mock.sql) localizado na raiz do projeto para criação de um banco de dados MySQL fictício com dados de exemplo. Ele cria:
+## ⚙️ Como Rodar
 
-- Um banco de dados chamado `empresa`
-- Uma tabela chamada `funcionarios`
-- Três registros de exemplo com diferentes cargos e salários  
-
-## Pré-requisitos
-
-Para rodar o projeto localmente, você precisa ter o Node.js e o MySQL instalados na sua máquina.
-
-- [Node.js](https://nodejs.org/)
-- [MySQL](https://www.mysql.com/)
-
-Além disso, para rodar o frontend, é necessário o React Scripts, que é instalado automaticamente ao rodar o comando `npm install` ou `yarn install`.
-
-## Instalação
-
-### Passo 1: Instalar as dependências
-
-Na raiz do projeto, execute o seguinte comando para instalar as dependências do backend e frontend simultaneamente:
-
+### 1️⃣ Instalar dependências:
 ```bash
 npm run install:all
 ```
 
-Isso instalará os pacotes do Node.js tanto para o backend quanto para o frontend.
-
-### Passo 2: Configurar o banco de dados
-
-Certifique-se de que o MySQL esteja configurado e rodando. Crie um banco de dados com o nome desejado e configure a conexão no arquivo `api/db.js`. Exemplo de configuração:
-
+### 2️⃣ Configurar banco (`api/db.js`):
 ```js
-export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "senha_do_banco",
-  database: "nome_do_banco"
-});
+database: "nome_do_banco"
 ```
 
-### Passo 3: Iniciar o projeto
-
-Para rodar o backend e o frontend simultaneamente, utilize o comando:
-
+### 3️⃣ Iniciar projeto:
 ```bash
 npm start
 ```
 
-Este comando executará o script `concurrently`, que iniciará o servidor da API e o servidor do frontend ao mesmo tempo. O backend será executado na porta `8800` e o frontend na porta `3000`.
+- 🟢 Backend: `http://localhost:8800`
+- 🔵 Frontend: `http://localhost:3000`
 
-## Endpoints da API
+---
 
-A API oferece os seguintes endpoints para gerenciar os dados dos funcionários:
+## 🔁 Endpoints da API
 
-### 1. **GET /api/users**
-   - **Descrição**: Retorna a lista de todos os funcionários.
-   - **Resposta**: Array com os dados dos funcionários.
+| Método | Rota              | Ação                    |
+|--------|-------------------|-------------------------|
+| GET    | `/api-docs`       | Documentação Swagger    |
+| GET    | `/api/users`      | Listar funcionários     |
+| GET    | `/api/users/:id`  | Buscar por ID           |
+| POST   | `/api/users`      | Criar funcionário       |
+| PUT    | `/api/users/:id`  | Atualizar funcionário   |
+| DELETE | `/api/users/:id`  | Remover funcionário     |
 
-### 2. **GET /api/users/:id**
-   - **Descrição**: Retorna os dados de um funcionário específico pelo `id`.
-   - **Parâmetros**: `id` (ID do funcionário).
-   - **Resposta**: Dados do funcionário ou erro caso não encontrado.
+---
 
-### 3. **POST /api/users**
-   - **Descrição**: Adiciona um novo funcionário.
-   - **Body**:
-     ```json
-     {
-       "nome": "Nome do Funcionário",
-       "cargo": "Cargo",
-       "salario": 5000
-     }
-     ```
-   - **Resposta**: Mensagem de sucesso ou erro.
+## 🤝 Contribuindo
 
-### 4. **PUT /api/users/:id**
-   - **Descrição**: Atualiza os dados de um funcionário existente.
-   - **Parâmetros**: `id` (ID do funcionário).
-   - **Body**:
-     ```json
-     {
-       "nome": "Novo Nome",
-       "cargo": "Novo Cargo",
-       "salario": 6000
-     }
-     ```
-   - **Resposta**: Mensagem de sucesso ou erro.
+1. `git checkout -b feature/sua-feature`
+2. Commit suas mudanças
+3. `git push origin`
+4. Abra um Pull Request 🚀
 
-### 5. **DELETE /api/users/:id**
-   - **Descrição**: Deleta um funcionário pelo `id`.
-   - **Parâmetros**: `id` (ID do funcionário).
-   - **Resposta**: Mensagem de sucesso ou erro.
+---
 
-## Como Contribuir
+## 📄 Licença
 
-1. Faça o fork do projeto.
-2. Crie uma nova branch (`git checkout -b feature/nova-feature`).
-3. Faça suas alterações e commit (`git commit -am 'Adiciona nova feature'`).
-4. Push para a branch (`git push origin feature/nova-feature`).
-5. Abra um pull request.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Distribuído sob a [MIT License](LICENSE).

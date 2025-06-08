@@ -1,56 +1,56 @@
 import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
+  /* Variáveis CSS para cores e fontes */
+  :root {
+    --font-family: 'Poppins', sans-serif;
+    --bg-color: #fafafa;
+    --form-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --form-radius: 8px;
+    --title-color: #fff;
+  }
 
-  * {
+  /* Reset básico */
+  *, *::before, *::after {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+    font-family: var(--font-family);
   }
 
   body {
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Adicionando o pseudo-elemento para o fundo */
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/image/universo.jpg'); /* Caminho correto para a imagem */
-    background-size: cover; /* Faz a imagem cobrir todo o fundo */
-    background-repeat: no-repeat; /* Não repete a imagem */
-    background-attachment: fixed; /* Faz a imagem ficar fixa ao rolar a página */
-    background-position: center; /* Alinha a imagem ao centro */
-    filter: brightness(0.7) blur(2px); /* Escurece e aplica blur */
-    -webkit-filter: brightness(0.7) blur(2px);
-    z-index: -1;
-  }
-
-  /* Estilo do título */
+  /* Título principal */
   h2 {
-    color: white;
+    color: var(--title-color);
   }
 
   #root {
-    position: relative; /* Faz com que o conteúdo seja exibido acima do pseudo-elemento */
+    position: relative; /* Garante que elementos internos fiquem acima de pseudo-elementos */
     z-index: 1;
+    top: 400px;
   }
 
-  /* Adicionando Box-shadow no formulário */
+  /* Estilo do formulário */
   form {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Efeito de sombra no formulário */
-    border-radius: 8px;
+    box-shadow: var(--form-shadow);
+    border-radius: var(--form-radius);
+    background-color: white;
+    padding: 1.5rem;
+    max-width: 400px;
+    width: 100%;
   }
-
 `;
 
 export default Global;

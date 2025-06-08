@@ -11,6 +11,7 @@
 -- Conexão com o banco de dados
 -- Certifique-se de que você está conectado ao servidor MySQL
 -- com um usuário que tenha permissões para criar bancos de dados e tabelas.
+
 -- Deleta o banco de dados se existir
 DROP DATABASE IF EXISTS `empresa`;
 
@@ -39,6 +40,17 @@ CREATE TABLE
 INSERT INTO
   `funcionarios` (`nome`, `cargo`, `salario`)
 VALUES
-  ('Teste da Silva', 'ADM', 7777.00),
-  ('Zé das Couve', 'CLT', 1518.00),
-  ('Demiurgo da Silva', 'Estagiário', 6969.00);
+  ('Teste da Silva', 'ADM', 7777.01),
+  ('Maria da Silva', 'Gerente', 2500.00),
+  ('João da Silva', 'Desenvolvedor', 2000.00),
+  ('Ana Souza', 'Analista de Sistemas', 3000.00),
+  ('Carlos Oliveira', 'Suporte Técnico', 1500.00),
+  ('Fernanda Costa', 'RH', 1800.00),
+  ('Roberto Santos', 'Financeiro', 2200.00),
+  ('Luciana Lima', 'Marketing', 1700.00),
+  ('Paulo Mendes', 'Vendas', 1900.00),
+  ('Mariana Rocha', 'Designer Gráfico', 1600.00),
+  ('Ricardo Alves', 'Engenheiro de Software', 2800.00),
+  ('Juliana Martins', 'Analista de Dados', 2100.00),
+  ('Zé Almeida', 'CLT', 1518.00),
+  ('João Pereira', 'Estagiário', 500.00);
